@@ -40,7 +40,7 @@ try:
                         del clients[client_address]
                         s.close()
                     else:
-                        # Sending the messages received from h1 to h3 and the otherway around
+                        # Sending the messages received from h1 to h2 and the otherway around
                         sender = list(clients.keys())[list(clients.values()).index(s)]
                         if "10.0.0.1"== s.getpeername()[0]:
                             clients["h2"].sendall(f"Messaggio da h1: {msg}\n".encode('utf-8'))
