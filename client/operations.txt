@@ -1,0 +1,28 @@
+1
+password
+View 1
+Deposit 1 30000
+SendTo 1 3 1000
+View 1
+Deposit 1 30000
+SendTo 1 3 1000
+View 1
+Deposit 1 30000
+SendTo 1 3 1000
+View 1
+Deposit 1 30000
+SendTo 1 3 1000
+SendTo 1 2 5000
+View 1
+Deposit 1 30000
+SendTo 1 3 1000
+View 1
+Deposit 1 30000
+SendTo 1 2 1500
+View 1
+Deposit 1 30000
+SendTo 1 3 1000
+View 1
+Deposit 1 30000
+SendTo 1 2 3000
+q
