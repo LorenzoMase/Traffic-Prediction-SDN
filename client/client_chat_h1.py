@@ -46,7 +46,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
     thread_ricezione.start()
     time.sleep(20)
 
-    for _ in range(10000):
+    for _ in range(10):
         # Selecting one random word
         parola = random.choice(parole_conversazione)
         # Sending the selected word
