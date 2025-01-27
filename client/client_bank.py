@@ -17,7 +17,7 @@ try:
         print("Dati ricevuti dal server inizialmente:")
         print(output)
     except EOFError:
-        print("Nessun dato iniziale ricevuto dal server.")ù
+        print("Nessun dato iniziale ricevuto dal server.")
         
     # Sending operations read from the output.txt fuile
     with open(input_file, "r") as infile:
