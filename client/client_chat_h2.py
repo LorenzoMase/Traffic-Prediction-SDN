@@ -48,6 +48,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
         parola = random.choice(parole_conversazione)
         client_socket.sendall(parola.encode("utf-8"))
         print(f"Inviato: {parola}")
+        time.sleep(1)
 
     print("Comunicazione terminata. In attesa di eventuali messaggi dal server...")
     time.sleep(10)
