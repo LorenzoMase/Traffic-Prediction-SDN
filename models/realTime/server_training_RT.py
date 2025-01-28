@@ -71,7 +71,6 @@ def train_model_from_file(temp_file):
 
         # Salva il modello aggiornato
         joblib.dump(model, "model.pkl")
-        joblib.dump(X.columns, "columns.pkl")
         print("Modello salvato come 'model.pkl'")
 
 def start_tcp_server(host, port):
