@@ -34,7 +34,7 @@ The structure of the project is as follows (DA FARE PER ULTIMO):
 ## The topology of the network
 The structure of the network is the following:  
 
-![Topology](images/NetworkingTopology.png)
+![NetTopology](images/NetworkingTopology.png)
 
 - 5 host  
     - 2 clients named h1 and h2  
