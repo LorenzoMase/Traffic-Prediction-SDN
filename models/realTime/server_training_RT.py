@@ -17,6 +17,7 @@ def write_to_tempfile(temp_file, data):
     with open(temp_file, 'ab') as f:
         f.write(data)
 
+# Funzione per processare src ip, dst ip, e protocol
 def process_packet(packet):
     try:
         if packet.haslayer(scapy.IP):
@@ -33,6 +34,7 @@ def process_packet(packet):
         print(f"Errore nell'elaborazione del pacchetto: {e}")
         return None
 
+# Funzione per processare la length dei pacchetti
 def process_length(packet):
     try:
         if packet.haslayer(scapy.IP):
@@ -45,6 +47,7 @@ def process_length(packet):
         print(f"Errore nell'elaborazione del pacchetto: {e}")
         return None
 
+# Funzione per allenare il modello
 def train_model_from_file(temp_file):
     print("Analisi dei pacchetti dal file temporaneo...")
     # Usa Scapy per leggere il file pcap
@@ -73,6 +76,7 @@ def train_model_from_file(temp_file):
         joblib.dump(model, "model.pkl")
         print("Modello salvato come 'model.pkl'")
 
+# Inizializzazione del server in ascolto su tutte le interfacce
 def start_tcp_server(host, port):
     print(f"Server TCP in ascolto su {host}:{port}...")
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -134,8 +138,8 @@ def update_plot(frame):
     ax.set_ylabel("Lunghezza dati (byte)")
     ax.legend()
     ax.grid(True)
-
-# Configura il grafico
+    
+# Definizione grafico
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # Avvia il server in un thread separato
@@ -143,6 +147,6 @@ server_thread = threading.Thread(target=start_tcp_server, args=("0.0.0.0", 6343)
 server_thread.daemon = True
 server_thread.start()
 
-# Avvia l'animazione con aggiornamento ogni secondo
+# Avvia l'animazione con aggiornamento per ogni secondo
 ani = FuncAnimation(fig, update_plot, interval=1000, blit=False)
 plt.show()
