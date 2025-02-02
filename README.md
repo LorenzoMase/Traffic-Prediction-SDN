@@ -160,10 +160,23 @@ The two models proposed have different approaches in both the idea of training a
 
 ## Traffic prediction model
 The first model's idea is that to predict the number of packets that are travelling inside the network, given a time and a service. This model was developed inside google colab's environment.
-The starting dataset comprised a pcap file generated using all the services in a random pattern. The packets contained in the pcap file are then preprocessed by checking the timestamp and grouping them based on the time of travel and the service.
-The service is defined based on the IP addresses of the servers, if a packet has one of the servers' address as src or dst the packet a counter of the corresponding timestamp is incremented. Then, a flag is set to 1 for one of the features `ServiceType_1`, `ServiceType_2` or `ServiceType_3`, as the services are one hot encoded to make the learning easier for the model.
+The starting dataset comprised a pcap file generated using all the services in a random pattern as training set and a second pcap file as validation set. The packets contained in the pcap files are then preprocessed by checking the timestamp and grouping them based on the time of travel and the service.
+The service is defined based on the IP addresses of the servers, if a packet has one of the servers' address as src or dst, a counter of the corresponding timestamp is incremented. Then, a flag is set to 1 for one of the features `ServiceType_1`, `ServiceType_2` or `ServiceType_3`, as the services are one hot encoded to make the learning easier for the model.
 
 ![Trainingfile](images/Trainingfile.png)
+
+Then, the `Time` feature is normalized to make the values feasible for the model to learn. The polinomial regression model is then trained, by using a polinomial transformation on the training set to obtain a more complex prediction and the `TotalPackets` feature as label.
+During the training the training set is split in 80% and 20%, a first test is done on the latter to understand if the model is solving the task. Furthermore, it is shown a simple prediction made on the second after the end of the training set.
+![previsione](images/previsione.png)
+
+Then, it is possible to check on the graphs printed the distribution of the training set and the predictions done by the model.
+
+![TrainingExecution](images/TrainingExecution.png)
+
+![TrainingExecution1](images/TrainingExecution1.png)
+As the graphs show the model is understanding the pattern with a Mean Squared Error of 2360.
+
+At last, the model is validated on the validation set, the graph shows the prediction of the model over the distribution of the data.
 
 
 ## Packets length prediction model
