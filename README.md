@@ -5,12 +5,11 @@
 - [Project Structure](#Project-Structure)
 - [The topology of the network](#The-topology-of-the-network)
 - [Docker images](#Docker-images)
-- [Running example of the network](#Running-example)
+- [Running example of the network](#Running-example-of-the-network)
     - [The Streaming service](#The-Streaming-service)
     - [The Bank service](#The-Bank-service)
     - [The Echo-chat service](#The-Echo-chat-service)
-    - [Saving the Pcap file](#Saving-the-Pcap-file)
-
+    - [Saving the Pcap file](#Saving-the-Pcap-file)  
 ## Project Introduction
 This project aims to develop an artificial intelligence application capable of analyzing network traffic captures generated using a Mininet topology.  
 The application leverages machine learning models to predict specific network characteristics: the number of packets exchanged and the length of the exchanged packets.  
