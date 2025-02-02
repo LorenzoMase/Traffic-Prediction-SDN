@@ -32,7 +32,8 @@ The tecnology used in this project are:
 
 ## Project Structure
 The structure of the project is as follows:  
-`Traffic-Prediction-SDN
+```
+Traffic-Prediction-SDN
 ├── README.md
 ├── build.sh
 ├── client
@@ -65,7 +66,8 @@ The structure of the project is as follows:
 │       ├── input.mp4
 │       ├── nginx.conf
 │       └── stream.sh
-└── topology.py`
+└── topology.py
+```
 ## The topology of the network
 The structure of the network is the following:  
 
