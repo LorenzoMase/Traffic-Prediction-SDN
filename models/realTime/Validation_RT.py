@@ -48,7 +48,7 @@ for packet in packets:
 
 df = pd.DataFrame(data)
 
-# Pre-elaborazione dei dati (one-hot encoding e gestione dei valori mancanti)
+# Pre-elaborazione dei dati (one-hot encoding)
 X = pd.get_dummies(df, columns=["src_ip", "dst_ip", "protocol"], dummy_na=True).fillna(0)
 X.to_csv('X.csv', index=False)
 # Previsioni sulla lunghezza dei pacchetti
