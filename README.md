@@ -71,7 +71,7 @@ Traffic-Prediction-SDN
 - `build.sh`: It's a script to build all the needed docker images to start the topology.
 - `client`: Contains all the files related to the docker image for the client used to connect to the servers.
 - `images`: Contains all the images used for this README.
-- `models`: Contains all the code used to create the models, in particular in the `realTime` subdirectory it is possible to find one of the actual models created and a validation pcap file to check for the results.
+- `models`: Contains all the code used to create both the models, in particular in the `realTime` subdirectory it is possible to find one of the actual models created and a validation pcap file to check for the results.
 - `servers`: Contains one subdirectory for each server image, dev_test is the base image used, while the others are specific for a service.
 - `topology.py`: Execute this file to start the network after building the images.
 ## The topology of the network
