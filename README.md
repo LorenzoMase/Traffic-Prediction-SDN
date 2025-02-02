@@ -180,7 +180,8 @@ Then, it is possible to check on the graphs printed the distribution of the trai
 As the graphs show the model is understanding the pattern with a Mean Squared Error of 2360.
 
 At last, the model is validated on the validation set, the graph shows the prediction of the model over the distribution of the data.
-TODO immagine validation set
+![validation](images/validation.png)
+
 
 ## Packets length prediction model
 The second model proposed is trained with a real-time approach, meaning that the model is trained in a server that is connected to the network, the latter located inside a virtual machine.
