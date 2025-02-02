@@ -9,7 +9,7 @@
     - [The Streaming service](#The-Streaming-service)
     - [The Bank service](#The-Bank-service)
     - [The Echo-chat service](#The-Echo-chat-service)
-    - [Saving the Pcap file](#Saving-the-Pcap-file)  
+    - [Saving the Pcap file](#Saving-the-Pcap-file) 
 ## Project Introduction
 This project aims to develop an artificial intelligence application capable of analyzing network traffic captures generated using a Mininet topology.  
 The application leverages machine learning models to predict specific network characteristics: the number of packets exchanged and the length of the exchanged packets.  
@@ -154,3 +154,16 @@ Now you can easily download your pcap file by right-clicking on the file and dow
 
 ![download](images/download.png)  
 
+## Machine learning models
+For this project the main idea was to develop a machine learning model that could in any way predict the traffic inside the network.
+The two models proposed have different approaches in both the idea of training and prediction.
+
+## Traffic prediction model
+The first model's idea is that to predict the number of packets that are travelling inside the network, given a time and a service. This model was developed inside google colab's environment.
+The starting dataset comprised a pcap file generated using all the services in a random pattern. The packets contained in the pcap file are then preprocessed by checking the timestamp and grouping them based on the time of travel and the service.
+The service is defined based on the IP addresses of the servers, if a packet has one of the servers' address as src or dst the packet is labeled with the relative service number (1, 2 or 3).
+
+![Trainingfile](images/Trainingfile.png)
+
+
+## Packets length prediction model
