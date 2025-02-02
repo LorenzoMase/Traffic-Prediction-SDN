@@ -31,8 +31,41 @@ The tecnology used in this project are:
 - Scapy: A python library used to extract features from packets saved in pcap files.
 
 ## Project Structure
-The structure of the project is as follows (DA FARE PER ULTIMO):  
-
+The structure of the project is as follows:  
+`Traffic-Prediction-SDN
+├── README.md
+├── build.sh
+├── client
+│   ├── Dockerfile
+│   ├── client_bank.py
+│   ├── client_chat_h1.py
+│   ├── client_chat_h2.py
+│   ├── operations.txt
+│   └── viewer.sh
+├── images
+├── models
+│   ├── Traffic_prediction_model.ipynb
+│   └── realTime
+│       ├── Validation_RT.py
+│       ├── columns.pkl
+│       ├── model.pkl
+│       ├── server_training_RT.py
+│       └── validation.pcap
+├── servers
+│   ├── bank_server
+│   │   ├── Dockerfile
+│   │   └── server.py
+│   ├── dev_test
+│   │   └── Dockerfile
+│   ├── echo_server
+│   │   ├── Dockerfile
+│   │   └── server.py
+│   └── streaming_server
+│       ├── Dockerfile
+│       ├── input.mp4
+│       ├── nginx.conf
+│       └── stream.sh
+└── topology.py`
 ## The topology of the network
 The structure of the network is the following:  
 
