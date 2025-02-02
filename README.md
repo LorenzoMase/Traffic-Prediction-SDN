@@ -195,6 +195,7 @@ While the packets arrive to the server, a real-time graph is updated each second
 During this phase the arriving packets are written in a temporary file. Once the traffic is done, the file is read and the packets analyzed and given as input to the `Stochastic gradient descent regressor`.
 The packets are preprocessed with one hot encoding over the `IP_src`, `IP_dst` and `protocol`.
 The image shows a chunck of the training set.
+
 ![training_RT](images/training_realtime.png)
 
 The model is so trained with the traffic and saved.
