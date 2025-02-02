@@ -161,8 +161,8 @@ For this project the main idea was to develop a machine learning model that coul
 The two models proposed have different approaches in both the idea of training and prediction.
 
 ## Traffic prediction model
-The first model's idea is that to predict the number of packets that are travelling inside the network, given a time and a service. This model was developed inside google colab's environment.
-The starting dataset comprised a pcap file generated using all the services in a random pattern as training set and a second pcap file as validation set. The packets contained in the pcap files are then preprocessed by checking the timestamp and grouping them based on the time of travel and the service.
+The first model's idea is that to predict the number of packets that are travelling inside the network, given a time and a service. This model was developed inside google colab's environment. 
+The starting dataset comprised a pcap file generated using all the services in a random pattern as training set and a second pcap file as validation set. The packets contained in the pcap files are then preprocessed by checking the timestamp and grouping them based on the time of travel and the service. 
 The service is defined based on the IP addresses of the servers, if a packet has one of the servers' address as src or dst, a counter of the corresponding timestamp is incremented. Then, a flag is set to 1 for one of the features `ServiceType_1`, `ServiceType_2` or `ServiceType_3`, as the services are one hot encoded to make the learning easier for the model.
 
 ![Trainingfile](images/Trainingfile.png)
