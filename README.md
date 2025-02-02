@@ -161,8 +161,8 @@ For this project the main idea was to develop a machine learning model that coul
 The two models proposed have different approaches in both the idea of training and prediction.
 
 ## Traffic prediction model
-The first model's idea is that to predict the number of packets that are travelling inside the network, given a time and a service. This model was developed inside google colab's environment. 
-The starting dataset comprised a pcap file generated using all the services in a random pattern as training set and a second pcap file as validation set. The packets contained in the pcap files are then preprocessed by checking the timestamp and grouping them based on the time of travel and the service. 
+The first model's idea is that to predict the number of packets that are travelling inside the network, given a time and a service. This model was developed inside google colab's environment.
+The starting dataset comprised a pcap file generated using all the services in a random pattern as training set and a second pcap file as validation set. The packets contained in the pcap files are then preprocessed by checking the timestamp and grouping them based on the time of travel and the service.
 The service is defined based on the IP addresses of the servers, if a packet has one of the servers' address as src or dst, a counter of the corresponding timestamp is incremented. Then, a flag is set to 1 for one of the features `ServiceType_1`, `ServiceType_2` or `ServiceType_3`, as the services are one hot encoded to make the learning easier for the model.
 
 ![Trainingfile](images/Trainingfile.png)
@@ -179,6 +179,11 @@ Then, it is possible to check on the graphs printed the distribution of the trai
 As the graphs show the model is understanding the pattern with a Mean Squared Error of 2360.
 
 At last, the model is validated on the validation set, the graph shows the prediction of the model over the distribution of the data.
-
+TODO immagine validation set
 
 ## Packets length prediction model
+The second model proposed is trained with a real-time approach, meaning that the model is trained in a server that is connected to the network, in our case inside a virtual machine.
+At first, the `server_training_RT.py` is executed, this will start a server listening to any interface on the port 6343. Then, inside the virtual machine is executed the topology and the tcpdump command, together with netcat, to direct the traffic captured to the python server: `sudo tcpdump -i s2-eth1 -w - | nc <IP_address> <port>`.
+To connect the host machine with the virtual machine the interface `bridge100` was used.
+
+Then, once the connection is confirmed by the server, it is possible to start creating the traffic inside the network, with the commands explained in the [Running example of the network](#Running-example-of-the-network) chapter
