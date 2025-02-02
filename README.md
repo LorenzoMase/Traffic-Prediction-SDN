@@ -192,8 +192,8 @@ While the packets arrive to the server, a real-time graph is updated each second
 
 During this phase the arriving packets are written in a temporary file. Once the traffic is done, the file is read and the packets analyzed and given as input to the `Stochastic gradient descent regressor`.
 The packets are preprocessed with one hot encoding over the `IP_src`, `IP_dst` and `protocol`.
-The model is so trained with the traffic, it is then saved and a new pcap file is used for evaluation.
-
+The model is so trained with the traffic and saved.
+Then, the `validation.py` script is executed, using the saved model to execute predictions over the validation set and the coefficient of determination is calculated.
 The result obtained is a model capable of predicting the length of any given packet with a coefficient of determination (R^2) of 0.73 over the validation set.
 
 
