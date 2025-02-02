@@ -2,7 +2,7 @@ import scapy.all as scapy
 import pandas as pd
 import numpy as np
 import joblib
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.metrics import r2_score
 
 model = joblib.load('model.pkl')
 
@@ -53,12 +53,8 @@ X = pd.get_dummies(df, columns=["src_ip", "dst_ip", "protocol"], dummy_na=True).
 X.to_csv('X.csv', index=False)
 # Previsioni sulla lunghezza dei pacchetti
 predictions = model.predict(X)
-mse = mean_squared_error(labels, predictions)
-mae = mean_absolute_error(labels, predictions)
 r2 = r2_score(labels, predictions)
 
-print(f"Errore Quadratico Medio (MSE): {mse}")
-print(f"Errore Assoluto Medio (MAE): {mae}")
 print(f"Coefficiente di Determinazione (R^2): {r2}")
 
 # Salvataggio dei risultati in un file CSV
