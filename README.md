@@ -40,7 +40,7 @@ The structure of the network is the following:
     - 2 clients named h1 and h2  
     - 3 different servers named h3, h4 and h5.  
 ## Docker images
-This project comprises 4 different docker images that are instanciated inside of the different hosts. 
+This project comprises 5 different docker images that are instanciated inside of the different hosts. 
 The first image is the clients' image `complete_client`, this image is created starting from an `ubuntu:20.04` image, then are downloaded the most important services for the client side, being python and ffmpeg, and other utilities.
 Then,  inside the /home/ directory are copied the following scripts:
 - `viewer.sh`: Bash script to connect to a streaming server.
@@ -51,8 +51,20 @@ Then,  inside the /home/ directory are copied the following scripts:
 
 This image is deployed in both the clients, to make sure that they have access to the same services.
 
-Then, the streaming server image `server_streaming` 
-TODO
+Then, the `dev_test` image is a base image based on `ubuntu:20.04` which contains the main utilities for networking projects, such as iperf, tcpdump and others.
+This image is used as a testing image for the hosts.
+
+Then, the `bank_server` image, is used to deploy the banking service server, it contains the common networking and python utilities, and is based on the `ubuntu:20.04` image.
+The host exposes port 65000 to permit connections from other hosts.
+In the `home` directory is copied the python script `server.py`, which deploys the server on the exposed port and processes the payload of the requests.
+This image is only deployed in h4.
+
+Then, the `echo_server` image, similarly to the bank one, contains the most common utilities for python and networking, exposes port 65000 and copies the `server.py` script.
+This image is deployed in h5.
+
+Then, the `streaming_server` is based on the latest release of `tiangolo/nginx-rtmp`, which is a very popular docker image for streaming services.
+It copies the nginx.conf file, the terminal script to start the streaming and the video to stream.
+Port 1935 is exposed. This service is deployed in h3.
 
 ## Running example
 In order to run the application and test the network you have first to download Comnetsemu from this repository 'https://git.comnets.net/public-repo/comnetsemu', then import the project inside Comnetsemu, and finally navigate into the `Networking-Project`. Then, it is required to instaciate all the docker images by executing the command `sudo ./build.sh`.
