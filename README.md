@@ -5,7 +5,7 @@
 - [Project Structure](#Project-Structure)
 - [The topology of the network](#The-topology-of-the-network)
 - [Docker images](#Docker-images)
-- [Running example](#Running-example)
+- [Running example of the network](#Running-example)
     - [The Streaming service](#The-Streaming-service)
     - [The Bank service](#The-Bank-service)
     - [The Echo-chat service](#The-Echo-chat-service)
@@ -66,7 +66,7 @@ Then, the `streaming_server` is based on the latest release of `tiangolo/nginx-r
 It copies the nginx.conf file, the terminal script to start the streaming and the video to stream.
 Port 1935 is exposed. This service is deployed in h3.
 
-## Running example
+## Running example of the network
 In order to run the application and test the network you have first to download Comnetsemu from this repository 'https://git.comnets.net/public-repo/comnetsemu', then import the project inside Comnetsemu, and finally navigate into the `Networking-Project`. Then, it is required to instaciate all the docker images by executing the command `sudo ./build.sh`.
 
 ![Build](images/build.png)
