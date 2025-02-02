@@ -183,7 +183,19 @@ TODO immagine validation set
 
 ## Packets length prediction model
 The second model proposed is trained with a real-time approach, meaning that the model is trained in a server that is connected to the network, in our case inside a virtual machine.
+This model is able to predict the length of the packets arriving, given the `src_ip`, `dst_ip` and `protocol`.
 At first, the `server_training_RT.py` is executed, this will start a server listening to any interface on the port 6343. Then, inside the virtual machine is executed the topology and the tcpdump command, together with netcat, to direct the traffic captured to the python server: `sudo tcpdump -i s2-eth1 -w - | nc <IP_address> <port>`.
 To connect the host machine with the virtual machine the interface `bridge100` was used.
 
-Then, once the connection is confirmed by the server, it is possible to start creating the traffic inside the network, with the commands explained in the [Running example of the network](#Running-example-of-the-network) chapter
+Then, once the connection is confirmed by the server, it is possible to start creating the traffic inside the network, with the commands explained in the [Running example of the network](#Running-example-of-the-network) chapter.
+While the packets arrive to the server, a real-time graph is updated each second, showing the distribution of the arriving packets length over time.
+
+During this phase the arriving packets are written in a temporary file. Once the traffic is done, the file is read and the packets analyzed and given as input to the `Stochastic gradient descent regressor`.
+The model is so trained with the traffic, it is then saved and a new pcap file is used for evaluation.
+
+The result obtained is a model capable of predicting the length of any given packet with a coefficient of determination (R^2) of 0.73.
+
+
+
+    
+
