@@ -1,7 +1,7 @@
 # Traffic prediction in SDN networks
 ## Table of Contents
 - [Project Introduction](#project-Introduction)
-- [Technology used](#Technology-used)
+- [Technologies used](#Technology-used)
 - [Project Structure](#Project-Structure)
 - [The topology of the network](#The-topology-of-the-network)
 - [Docker images](#Docker-images)
@@ -20,7 +20,7 @@ The primary goal is to provide an advanced tool for predictive network analysis,
 This solution is designed to support activities such as network performance monitoring, diagnostics, and traffic flow optimization.  
 The project integrates a simulated network environment (Mininet) to generate realistic traffic and AI models that process traffic captures in pcap format to deliver accurate predictions.  
 
-## Technology used
+## Technologies used
 The tecnology used in this project are:  
 - Comnetsemu: A comprehensive network emulator equipped with all the necessary tools to support the execution of the project.  
 - Mininet: A flexible network emulator that enables the design and simulation of customized network topologies.  
