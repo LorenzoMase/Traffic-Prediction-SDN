@@ -238,8 +238,8 @@ The packets are preprocessed with one hot encoding over the `IP_src`, `IP_dst` a
 
 The model is so trained with the traffic and saved.
 Then, the `Validation_RT.py` script is executed, using the saved model to execute predictions over the validation set and the coefficient of determination is calculated.
-The result obtained is a model capable of predicting the length of any given packet with a coefficient of determination (R^2) of 0.73 over the validation set.
-
+The result obtained is a model capable of predicting the length of any given packet with a coefficient of determination (R^2) of 0.73 over the validation set. The model is provided as 
+`model.pkl` under the models and realTime subdirectory.
 
 
     
