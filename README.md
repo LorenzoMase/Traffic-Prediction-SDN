@@ -138,7 +138,7 @@ If the execution is correct, the following output will appear, with the current 
 
 ![stream2](images/stream2.png)  
 
-If the service was executed without the `&` flag , with `control-c` it is possible to quit the h3 host terminal without killing the process. Then, start the client using the following two command `h1 cd home` and finally execute the viewer command `h1 ./stream.sh`, that will connect the client host to the stream and create an `output.mp4` file, containing the captured seconds of the stream, both video and audio are captured. This service is deployed using ffmpeg, a popular library for deployment of streaming services.  
+If the service was executed without the `&` flag , with `control-c` it is possible to quit the h3 host terminal without killing the process. Then, start the client using the following two command `h1 cd home` and finally execute the viewer command `h1 ./viewer.sh`, that will connect the client host to the stream and create an `output.mp4` file, containing the captured seconds of the stream, both video and audio are captured. This service is deployed using ffmpeg, a popular library for deployment of streaming services.  
 The output will contain the amount of data received and the timestamp of the stream.
 Note that you can use the `h2` client aswell, as the images deployed to the clients are the same, meaning they both contain the same scripts to connect to all the servers. It is possible to connect both the clients to the same stream.  
 
