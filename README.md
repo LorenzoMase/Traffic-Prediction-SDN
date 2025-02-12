@@ -144,7 +144,7 @@ Note that you can use the `h2` client aswell, as the images deployed to the clie
 
 ![streamClient](images/streamClient.png)  
 
-In order to quit the stream as the client, you can just type `q`,  so the `ouput.mp4` file will be generated.  
+In order to quit the stream as the client, you can just type `q`,  so the `output.mp4` file will be generated.  
 We reccomend to let the client view the stream for at least 30 second in order to capture enough traffic.  
 If you want to run the stream twice on the same client and capture the traffic, it is possible to overwrite the `output.mp4` file. A possible bug related to `ffmpeg`'s implementation may occurr, related to 2 frames, being video and audio, being captured at the same time. In this case, it is possible to restart the service and the bug should not be happening again.   
 
@@ -237,7 +237,7 @@ During this phase the arriving packets are written in a temporary file. Once the
 The packets are preprocessed with one hot encoding over the `IP_src`, `IP_dst` and `protocol`.
 
 The model is so trained with the traffic and saved.
-Then, the `validation.py` script is executed, using the saved model to execute predictions over the validation set and the coefficient of determination is calculated.
+Then, the `Validation_RT.py` script is executed, using the saved model to execute predictions over the validation set and the coefficient of determination is calculated.
 The result obtained is a model capable of predicting the length of any given packet with a coefficient of determination (R^2) of 0.73 over the validation set.
 
 
