@@ -19,7 +19,7 @@ try:
     except EOFError:
         print("Nessun dato iniziale ricevuto dal server.")
         
-    # Sending operations read from the output.txt fuile
+    # Sending operations read from the output.txt file
     with open(input_file, "r") as infile:
         for line in infile:
             line = line.strip() 
