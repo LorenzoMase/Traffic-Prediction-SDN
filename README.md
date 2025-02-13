@@ -18,7 +18,7 @@ This project aims to develop an artificial intelligence application capable of a
 The application leverages machine learning models to predict specific network characteristics: the number of packets exchanged and the length of the exchanged packets.  
 The primary goal is to provide an advanced tool for predictive network analysis, enabling users to extract key insights about traffic characteristics directly from raw data.   
 This solution is designed to support activities such as network performance monitoring, diagnostics, and traffic flow optimization.  
-The project integrates a simulated network environment (Mininet) to generate realistic traffic and AI models that process traffic captures in pcap format to deliver accurate predictions.  
+The project integrates a simulated network environment (Mininet) to generate realistic traffic and AI models that process traffic captures in pcap format to deliver predictions over SDN.  
 
 ## Technologies used
 The tecnology used in this project are:  
