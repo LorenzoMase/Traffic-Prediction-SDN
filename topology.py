@@ -60,7 +60,6 @@ if __name__ == "__main__":
     net.start()
 
     info("*** Adding tcpdump to containers\n")
-    # Avvia tcpdump in background su entrambe i container
 
     srv1 = mgr.addContainer("srv1", "h1", "dev_test", "", docker_args={})
     srv2 = mgr.addContainer("srv2", "h2", "dev_test", "", docker_args={})
@@ -72,7 +71,6 @@ if __name__ == "__main__":
         spawnXtermDocker("srv2")        
         CLI(net)
 
-    # Attendi un po' di tempo per garantire che il traffico avvenga
     mgr.removeContainer("srv1")
     mgr.removeContainer("srv2")
     mgr.removeContainer("srv3")
