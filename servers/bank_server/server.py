@@ -23,9 +23,11 @@ while True:
     print("In attesa di connessioni...")
     connection, client_address = sock.accept()
     print(f"Connessione stabilita con {client_address}")
+    # Someone connecting
     try:
         connection.sendall(b"Welcome to YourBank.com!\nCommand q to quit!\n")
         while True:
+            # Authentication
             if login==False:
                 connection.sendall(b"Insert username or insert q to quit: ")
                 data = connection.recv(1024)
@@ -68,7 +70,7 @@ while True:
                 else:
                     connection.sendall(b"Invalid input")
                     break
-
+            # Waiting for operations after authentication
             connection.sendall(b"Type an operation: ")
             data = connection.recv(1024)
             if data:
@@ -94,6 +96,7 @@ while True:
                         fusername=int(fusername)
                         tusername=int(tusername)
                         amount=float(amount)
+                    # Help command definition
                     elif arguments_count==1 and arguments_check[0]=="Help" and login==True:
                         help_service=True
                         connection.sendall(f"Usage:\n\tView [Username]\n\t Deposit [Username] [Amount]\n\t SendTo [From_username] [To_username] [Amount]\nUsernames: 1, 2, 3\n".encode('utf-8'))
@@ -103,6 +106,7 @@ while True:
                         connection.sendall(b"Invalid Input")
                     # SendTo function
                     if op == "SendTo":
+                        # SendTo if fusername==1
                         if fusername == 1 and first_account[3]==True:
                             if first_account[2] - amount < 0:
                                 connection.sendall(b"Error: Missing funds. To deposit, use the Deposit service\n")
@@ -155,6 +159,7 @@ while True:
                             connection.sendall(f"Your balance is: {third_account[2]}\n".encode('utf-8'))
                         else:
                             connection.sendall(b"Permission Denied\n")
+                    # Deposit function
                     elif op == "Deposit":
                         if username==1 and first_account[3]==True:
                             first_account[2]+=amount
