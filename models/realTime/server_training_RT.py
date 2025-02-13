@@ -114,7 +114,7 @@ def start_tcp_server(host, port):
         print(f"Errore nel server: {e}")
     finally:
         sock.close()
-
+# Funzione per aggiornare il grafico in tempo reale
 def update_plot(frame):
     global live_data
 
